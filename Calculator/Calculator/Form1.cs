@@ -12,9 +12,9 @@ namespace Calculator
 {
     public partial class Form1 : Form
     {
-        int num01;
-        int num02;
-        int finalNum;
+        double num01;
+        double num02;
+        double finalNum;
         string mathOperator;
 
 
@@ -70,18 +70,19 @@ namespace Calculator
         {
             getNum01();
             mathOperator = "+";
-            label1.Text = textBox1.Text + mathOperator;
+            label1.Text = textBox1.Text + " " + mathOperator;
             textBox1.Text = "";
         }
+
         //Gets the number inputted into textBox1 and converts it to an int
         public void getNum01()
         {
-            num01 = Convert.ToInt32(textBox1.Text); 
+            num01 = Convert.ToDouble(textBox1.Text); 
         }
         //Gets the second number inputted into textBox1 and converts it to an int
         public void getNum02()
         {
-            num02 = Convert.ToInt32(textBox1.Text);
+            num02 = Convert.ToDouble(textBox1.Text);
         }
         //5
         private void button10_Click(object sender, EventArgs e)
@@ -126,7 +127,7 @@ namespace Calculator
         {
             getNum01();
             mathOperator = "-";
-            label1.Text = textBox1.Text + mathOperator;
+            label1.Text = textBox1.Text + " " + mathOperator;
             textBox1.Text = "";
         }
         //*
@@ -134,7 +135,7 @@ namespace Calculator
         {
             getNum01();
             mathOperator = "*";
-            label1.Text = textBox1.Text + mathOperator;
+            label1.Text = textBox1.Text + " " + mathOperator;
             textBox1.Text = "";
         }
         // '/'
@@ -142,8 +143,13 @@ namespace Calculator
         {
             getNum01();
             mathOperator = "/";
-            label1.Text = textBox1.Text + mathOperator;
+            label1.Text = textBox1.Text + " " + mathOperator;
             textBox1.Text = "";
+        }
+        //.
+        private void button17_Click(object sender, EventArgs e)
+        {
+            textBox1.AppendText(".");
         }
     }
 }
